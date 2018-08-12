@@ -1,0 +1,65 @@
+﻿@model NutritionWebAppCSharp.Models.Calculation
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h5 id="returnMsg">@ViewBag.Result</h5>
+
+<div class="form-body">
+
+    @using (Html.BeginForm("Calculate", "Nutrition", FormMethod.Post, new { id = "formCalculate"}))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.foodName)
+            @Html.TextBoxFor(m => m.foodName, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.caloriesPerServing)
+            @Html.TextBoxFor(m => m.caloriesPerServing, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.gramsOfFatPerServing)
+            @Html.TextBoxFor(m => m.gramsOfFatPerServing, new { @class = "form-control" })
+        </div>
+        <button type="button" id="btnCalculate" class="btn btn-default">Calculate</button>
+    }
+</div>
+
+<script type="text/javascript">
+
+    
+
+    $('#btnCalculate').on('click', calculate);
+
+    function calculate() {
+
+
+        var formCalc = $('#formCalculate').serializeArray();     //document.getElementById('formCalculate');
+
+        var calcObj = {};
+        formCalc.forEach(function (element) {
+            calcObj[element.name] = element.value;
+        });
+
+
+        $.ajax({
+            url: "http://localhost:58742/Nutrition/Calculate",
+            data: calcObj,
+            type: "GET",
+            dataType:"json",
+            error: function (err) {
+                alert(err);
+            },
+            success: function (data) {
+                var msg = document.getElementById('returnMsg');
+                msg.innerHTML = data.AHAapproved;
+
+                alert(data);
+            }
+        });
+
+        return false;
+    }
+</script>
