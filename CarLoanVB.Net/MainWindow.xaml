@@ -5,8 +5,63 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CarLoanVB.Net"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="400">
-    <Grid>
+        Title="MainWindow" Height="360" Width="420">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" 
+               Content="Amount of Loan"
+               FontSize="16"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"/>
+
+        <Label Grid.Row="1" Grid.Column="0"
+               FontSize="16"
+               Content="Interest Rate"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"/>
+        <Label Grid.Row="2" Grid.Column="0"
+               FontSize="16"
+               Content="Duration in month"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"/>
+
+             
+        <Label Grid.Row="4" Grid.Column="0"
+               Content="Monthy Payment"
+               FontSize="16"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"/>
+
+        <Label Grid.Row="5" Grid.Column="0"
+               Content="Total Interest Paid"
+               FontSize="16"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"/>
+        <TextBox x:Name="txtAmountOfLoan" Grid.Row="0" Grid.Column="1"
+                 Margin="10" />
+        <TextBox x:Name="txtInterestRate" Grid.Row="1" Grid.Column="1"
+                   Margin="10" />
+        <TextBox x:Name="txtDuration" Grid.Row="2" Grid.Column="1"
+                   Margin="10"/>
+        <TextBox x:Name="txtMonthyPayments" Grid.Row="4" Grid.Column="1"
+                 Margin="10"/>
+        <TextBox x:Name="txtInterestPaid" Grid.Row="5" Grid.Column="1"
+                 Margin="10"/>
         
+        <Button Grid.Column="0" Grid.Row="3"
+                Grid.ColumnSpan="2" Content="Analyze"
+                Margin="25"/>
+
     </Grid>
 </Window>
