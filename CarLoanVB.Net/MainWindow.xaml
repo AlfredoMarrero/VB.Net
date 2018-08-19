@@ -36,7 +36,6 @@
                HorizontalAlignment="Center"
                VerticalAlignment="Center"/>
 
-             
         <Label Grid.Row="4" Grid.Column="0"
                Content="Monthy Payment"
                FontSize="16"
@@ -59,7 +58,7 @@
         <TextBox x:Name="txtInterestPaid" Grid.Row="5" Grid.Column="1"
                  Margin="10"/>
         
-        <Button Grid.Column="0" Grid.Row="3"
+        <Button x:Name="btnAnalize" Grid.Column="0" Grid.Row="3" Click="btnAnalize_Click"
                 Grid.ColumnSpan="2" Content="Analyze"
                 Margin="25"/>
 
