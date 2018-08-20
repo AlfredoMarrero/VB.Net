@@ -328,3 +328,6 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+CarLoanWeb/fonts/glyphicons-halflings-regular.ttf
+*.eot
+*.woff
